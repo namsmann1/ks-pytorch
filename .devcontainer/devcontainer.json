@@ -8,7 +8,7 @@
     "cpus": 2,
     "memory": "4gb"
   },
-  "postCreateCommand": "uv sync --locked --all-extras",
+  "postCreateCommand": "make deps",
   "customizations": {
     "vscode": {
       "extensions": [
