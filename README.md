@@ -1,5 +1,5 @@
 # PyTorch 101
-Introduksjon til grunnprinsippene i PyTorch, samt noe bildebehandling
+Introduksjon til grunnprinsippene i PyTorch, samt noe bildebehandling.
 
 ## Kom i gang
 
@@ -42,7 +42,7 @@ en Markdown-celle for å redigere; bruk Shift+Enter for å vise svaret.
 | Notatbok | Tema |
 |---|---|
 | [01](oppgaver/01_tensorer.ipynb) | Tensorer, akser, broadcasting og matriseprodukt |
-| [02](oppgaver/02_utforsk_mnist.ipynb) | Bilder, klassefordeling og enkel referanse |
+| [02](oppgaver/02_bilder.ipynb) | Bilder, klassefordeling og enkel referanse |
 | [03](oppgaver/03_prediksjoner.ipynb) | Fra piksler til ti skårer |
 | [04](oppgaver/04_tap_og_gradienter.ipynb) | Tap og treningssteg uten utledning av backpropagation |
 | [05](oppgaver/05_lineaer_klassifikator.ipynb) | En synlig treningsløkke og feilsøking |
