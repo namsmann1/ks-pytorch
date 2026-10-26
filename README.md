@@ -44,9 +44,20 @@ en Markdown-celle for å redigere; bruk Shift+Enter for å vise svaret.
 | [01](oppgaver/01_tensorer.ipynb) | Tensorer, akser, broadcasting og matriseprodukt |
 | [02](oppgaver/02_bilder.ipynb) | Bilder, klassefordeling og enkel referanse |
 | [03](oppgaver/03_prediksjoner.ipynb) | Fra piksler til ti skårer |
-| [04](oppgaver/04_tap_og_gradienter.ipynb) | Tap og treningssteg uten utledning av backpropagation |
-| [05](oppgaver/05_lineaer_klassifikator.ipynb) | En synlig treningsløkke og feilsøking |
-| [06](oppgaver/06_nevralt_nettverk.ipynb) | Skjult lag, feilanalyse og selvstendig oppsummering |
+| [04](oppgaver/04_lineaer_klassifikator.ipynb) | Trening og evaluering av MNIST-modellen |
+| [05](oppgaver/05_nevralt_nettverk.ipynb) | Skjult lag, feilanalyse og selvstendig oppsummering |
+
+## Forelesningsmateriell
+
+[Slidev-presentasjonen](slides/slides.md) dekker notatbok 01–03 med
+forelesernotater, demonstrasjoner og oppgavepauser mellom de tre bolkene.
+Se [kjøring og foreleserveiledning](slides/README.md).
+
+```bash
+cd slides
+npm ci
+npm run dev
+```
 
 ## Data og løsninger
 

@@ -4,7 +4,7 @@
 
 This repository contains a Norwegian PyTorch crash course for beginners.
 
-- `oppgaver/`: six numbered student notebooks, from tensor basics to MNIST classification.
+- `oppgaver/`: five numbered student notebooks, from tensor basics to MNIST classification.
 - `solutions/`: matching notebooks with solution code and written answers; filenames must match `oppgaver/`.
 - `src/pytorch_101/utils/`: shared MNIST loading and random-seed helpers.
 - `scripts/kontroller_notatboker.py`: notebook validation and execution.
