@@ -15,7 +15,7 @@ ROT = Path(__file__).resolve().parent.parent
 def kontroller():
     oppgaver = sorted((ROT / "oppgaver").glob("*.ipynb"))
     losninger = sorted((ROT / "solutions").glob("*.ipynb"))
-    assert len(oppgaver) == 5, "Forventet fem oppgavenotatbøker."
+    assert len(oppgaver) == 6, "Forventet seks oppgavenotatbøker."
     assert [fil.name for fil in oppgaver] == [fil.name for fil in losninger]
     antall_oppgaver = 0
     antall_svar = 0

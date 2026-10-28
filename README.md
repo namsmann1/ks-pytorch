@@ -46,6 +46,12 @@ en Markdown-celle for å redigere; bruk Shift+Enter for å vise svaret.
 | [03](oppgaver/03_prediksjoner.ipynb) | Fra piksler til ti skårer |
 | [04](oppgaver/04_lineaer_klassifikator.ipynb) | Trening og evaluering av Fashion-MNIST-modellen |
 | [05](oppgaver/05_nevralt_nettverk.ipynb) | Skjult lag, feilanalyse og selvstendig oppsummering |
+| [06 (bonus)](oppgaver/06_bonus.ipynb) | Velg et datasett og bygg din egen pipeline |
+
+Notatbok 06 er et åpent, valgfritt prosjekt. Utforsk
+[datasettene i torchvision](https://docs.pytorch.org/vision/stable/datasets.html),
+velg en problemstilling og bygg en pipeline for trening og evaluering.
+Løsningsnotatboken viser ett mulig prosjekt med MNIST, som lastes ned til `data/`.
 
 ## Forelesningsmateriell
 
