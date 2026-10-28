@@ -4,9 +4,9 @@
 
 This repository contains a Norwegian PyTorch crash course for beginners.
 
-- `oppgaver/`: five numbered student notebooks, from tensor basics to MNIST classification.
+- `oppgaver/`: five numbered student notebooks, from tensor basics to Fashion-MNIST classification.
 - `solutions/`: matching notebooks with solution code and written answers; filenames must match `oppgaver/`.
-- `src/pytorch_101/utils/`: shared MNIST loading and random-seed helpers.
+- `src/pytorch_101/utils/`: shared Fashion-MNIST loading and random-seed helpers.
 - `scripts/kontroller_notatboker.py`: notebook validation and execution.
 - `README.md`: setup and course sequence.
 - `data/` and `outputs/`: ignored datasets and executed notebooks. `.devcontainer/` provides the development environment.
@@ -22,7 +22,7 @@ make kontroller        # Validate notebook structure, syntax, and solution parit
 make kjor-losninger    # Execute all solutions in fresh kernels
 ```
 
-Solution execution downloads MNIST if necessary and writes results to `outputs/solutions/`.
+Solution execution downloads Fashion-MNIST if necessary and writes results to `outputs/solutions/`.
 
 ## Coding Style & Naming Conventions
 

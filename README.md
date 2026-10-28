@@ -44,7 +44,7 @@ en Markdown-celle for å redigere; bruk Shift+Enter for å vise svaret.
 | [01](oppgaver/01_tensorer.ipynb) | Tensorer, akser, broadcasting og matriseprodukt |
 | [02](oppgaver/02_bilder.ipynb) | Bilder, klassefordeling og enkel referanse |
 | [03](oppgaver/03_prediksjoner.ipynb) | Fra piksler til ti skårer |
-| [04](oppgaver/04_lineaer_klassifikator.ipynb) | Trening og evaluering av MNIST-modellen |
+| [04](oppgaver/04_lineaer_klassifikator.ipynb) | Trening og evaluering av Fashion-MNIST-modellen |
 | [05](oppgaver/05_nevralt_nettverk.ipynb) | Skjult lag, feilanalyse og selvstendig oppsummering |
 
 ## Forelesningsmateriell
@@ -63,7 +63,16 @@ npm run dev
 
 Se `src/pytorch_101/utils/data.py` for hjelpefunksjoner til nedlasting av data.
 
-MNIST lastes som default ned til `data/`.
+Fashion-MNIST lastes automatisk ned til `data/`. Notatbok 02–05 bruker de samme
+faste utvalgene på 20 000 treningsbilder og 1 000 testbilder.
+Bildene viser klær, sko og vesker i ti klasser; norske klassenavn finnes
+i `CLASS_NAMES` fra `pytorch_101.utils`.
+
+I hovedløpet i notatbok 04–05 trener vi med Adam, læringsrate 0.001, batchstørrelse 64 og
+25 epoker. Den valgfrie sammenligningen i 05 bruker 8 og 128 skjulte nevroner.
+Treningen tar lengre tid enn de innledende eksemplene.
+
+Datasett: [Zalando Research – Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist).
 
 ## Referanser
 

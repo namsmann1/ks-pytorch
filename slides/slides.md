@@ -24,10 +24,10 @@ drawings:
 
 <div class="lead">Tensorer · Bilder · Modeller</div>
 
-<img src="/mnist-seven.svg" class="cover-art" alt="Et håndskrevet sjutall" />
+<img src="/fashion-sneaker.svg" class="cover-art" alt="En joggesko fra Fashion-MNIST" />
 
 <!--
-Vi skal etter hvert lage en modell som kjenner igjen sifre. Først trenger vi
+Vi skal etter hvert lage en modell som kjenner igjen klær, sko og vesker. Først trenger vi
 å forstå hvordan PyTorch lagrer tall, og hvordan vi regner med dem.
 Begynn med kjente begreper. Ikke introduser klassifikasjon, parametere eller
 funksjonsnotasjon før vi har bygget grunnlaget med konkrete tall.
@@ -491,7 +491,7 @@ Vi bruker her vanlige 8-bit gråtoneverdier, ikke en universell skala for alle b
 </div>
 </div>
 
-<div class="rule">Et MNIST-bilde i PyTorch: <code>[1, 28, 28]</code> — kanal, rader, kolonner.</div>
+<div class="rule">Et Fashion-MNIST-bilde i PyTorch: <code>[1, 28, 28]</code> — kanal, rader, kolonner.</div>
 
 <!--
 Vi går fra heltallsverdier til desimaltall mellom 0 og 1. Lysstyrken representerer det samme.
@@ -512,7 +512,7 @@ Skalering med 255 er ikke det samme som å sentrere eller standardisere dataene.
 <TensorMatrix :rows="[[1,2,3,4,5,6]]" :selected="['0,0','0,1','0,2']" />
 </div>
 
-<div class="lead">For MNIST: 28 · 28 = <strong>784 tall</strong> per bilde.</div>
+<div class="lead">For Fashion-MNIST: 28 · 28 = <strong>784 tall</strong> per bilde.</div>
 
 <div class="rule">Alle verdiene er med. Rader og kolonner er samlet til én akse.</div>
 
@@ -527,14 +527,14 @@ Modellen får likevel ingen innebygd regel om å behandle nabopiksler sammen.
 
 <div class="eyebrow">02 / Plassering</div>
 
-# Samme siffer, andre pikselverdier
+# Samme joggesko, andre pikselverdier
 
 <SpatialShift />
 
-<div class="rule lead">Modellen bør kjenne igjen sifferet også når det flytter seg litt.</div>
+<div class="rule lead">Modellen bør kjenne igjen skoen også når den flytter seg litt.</div>
 
 <!--
-Sjutallet er forskjøvet to piksler mot høyre. For oss er betydningen den samme,
+Joggeskoen er forskjøvet to piksler mot høyre. For oss er betydningen den samme,
 men mange verdier har byttet plass i pikselvektoren.
 En enkel lineær modell har ikke denne robustheten innebygd.
 Dette kan senere motivere dataaugmentering og konvolusjoner, men introduser ikke nye lag her.
@@ -570,7 +570,7 @@ av B-eksemplene blir riktige
 </div>
 
 <!--
-Dette er et hypotetisk eksempel, ikke MNIST-fordelingen studentene skal måle.
+Dette er et hypotetisk eksempel, ikke Fashion-MNIST-fordelingen studentene skal måle.
 En modell kan få høy samlet nøyaktighet bare ved å velge den vanligste klassen.
 Derfor trenger vi en enkel referanse og bør også se på resultatene per klasse.
 La gruppen forklare hva denne modellen faktisk har lært om bildene: ingenting.
@@ -695,7 +695,7 @@ men det begrepsskillet trenger ikke være en del av lysbildet.
 
 <!--
 Hver klasse har sine egne vekter og sin egen bias. Derfor får samme bilde flere skårer.
-For MNIST trenger vi ti skårer, én per siffer. Her bruker vi tre klasser for å gjøre valget lett å lese.
+For Fashion-MNIST trenger vi ti skårer, én per klasse. Her bruker vi tre klasser for å gjøre valget lett å lese.
 PyTorch kaller operasjonen som finner posisjonen til høyeste verdi argmax.
 Skår er et rått tall. Det kan være negativt og er ikke automatisk en sannsynlighet.
 -->
@@ -754,7 +754,7 @@ Fire inngangsverdier.<br>Tre skårer ut.
 Dette er broen til biblioteket, med andre størrelser enn oppgaven studentene skal løse.
 Et parameter er et tall modellen kan tilpasse under trening.
 PyTorch lagrer vektene med én rad per utgang. Detaljen om transponering står i notatboka.
-Ikke vis den ferdige MNIST-modellen her; la studentene sette den sammen selv.
+Ikke vis den ferdige Fashion-MNIST-modellen her; la studentene sette den sammen selv.
 -->
 
 ---

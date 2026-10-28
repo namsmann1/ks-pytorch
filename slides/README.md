@@ -40,7 +40,7 @@ slik at modellbegrepene bygger på noe kjent.
 
 HTML-kommentarene i `slides.md` er forelesernotater med forklaringer,
 spørsmål og begrepsavklaringer. De vises i presentatørvisningen.
-Lysbilde 23 viser samme siffer forskjøvet i bildet.
+Lysbilde 23 viser samme joggesko forskjøvet i bildet.
 
 ## Bygg og eksporter
 
@@ -64,7 +64,7 @@ lokale systemfonter og illustrasjoner.
 - `slides.md`: innhold, regneeksempler, forelesernotater og fagkilder.
 - `styles/style.css`: farger, typografi og oppsett.
 - `components/`: tallmatriser og romlig forskyvning.
-- `public/mnist-seven.svg`: pikselillustrasjonen.
+- `public/fashion-sneaker.svg`: pikselillustrasjonen.
 
 Generer pikselillustrasjonen på nytt fra reporoten etter Python-oppsettet:
 
@@ -72,4 +72,4 @@ Generer pikselillustrasjonen på nytt fra reporoten etter Python-oppsettet:
 uv run python slides/generate_assets.py
 ```
 
-Skriptet bruker prosjektets datahjelper, som laster ned MNIST ved behov.
+Skriptet bruker prosjektets datahjelper, som laster ned Fashion-MNIST ved behov.

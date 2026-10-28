@@ -5,31 +5,37 @@ from torch.utils.data import Subset
 from torchvision import datasets, transforms
 
 DATADIR = Path(__file__).resolve().parents[3] / "data"
-TRAIN_SAMPLES = 6_000
+TRAIN_SAMPLES = 20_000
 TEST_SAMPLES = 1_000
 SEED = 42
+CLASS_NAMES = (
+    "T-skjorte/topp",
+    "Bukse",
+    "Genser",
+    "Kjole",
+    "Kåpe",
+    "Sandal",
+    "Skjorte",
+    "Joggesko",
+    "Veske",
+    "Ankelstøvel",
+)
 
 
-def download_mnist(
+def download_fashion_mnist(
     datadir: Path = DATADIR,
     num_train: int = TRAIN_SAMPLES,
     num_test: int = TEST_SAMPLES,
 ) -> tuple[Subset, Subset]:
-    """
-    Download MNIST and return random train + test subsets.
+    """Last ned Fashion-MNIST og hent faste tilfeldige trenings- og testutvalg.
 
-    Args:
-        datadir: Directory in which to download the MNIST files.
-        num_train: Number of training examples to select, up to 60,000.
-        num_test: Number of test examples to select, up to 10,000.
-
-    Returns:
-        A pair of training and test subsets from the separate MNIST splits.
-        Each example contains an f32 image tensor of shape [1, 28, 28]
-        with pixel values in [0, 1], and an integer label from 0 to 9.
+    `datadir` angir datamappen. `num_train` og `num_test` angir antall bilder
+    fra de separate trenings- og testdelene, med opptil 60 000 og 10 000 bilder.
+    Hvert bilde er en float32-tensor med form [1, 28, 28] og verdier i [0, 1].
+    Etiketten er en klasseindeks fra 0 til 9; navnene finnes i `CLASS_NAMES`.
     """
-    trainset = datasets.MNIST(datadir, train=True, download=True, transform=transforms.ToTensor())
-    testset = datasets.MNIST(datadir, train=False, download=True, transform=transforms.ToTensor())
+    trainset = datasets.FashionMNIST(datadir, train=True, download=True, transform=transforms.ToTensor())
+    testset = datasets.FashionMNIST(datadir, train=False, download=True, transform=transforms.ToTensor())
     train_indices = torch.randperm(len(trainset), generator=torch.Generator().manual_seed(SEED))[:num_train]
     test_indices = torch.randperm(len(testset), generator=torch.Generator().manual_seed(SEED + 1))[:num_test]
     return Subset(trainset, train_indices.tolist()), Subset(testset, test_indices.tolist())

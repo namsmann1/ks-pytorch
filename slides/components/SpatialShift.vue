@@ -1,17 +1,17 @@
 <template>
   <div class="shift-illustration">
     <figure>
-      <svg viewBox="0 0 28 28" role="img" aria-label="Sjutall i opprinnelig posisjon">
+      <svg viewBox="0 0 28 28" role="img" aria-label="Joggesko i opprinnelig posisjon">
         <rect width="28" height="28" fill="#000" />
-        <image href="/mnist-seven.svg" width="28" height="28" />
+        <image href="/fashion-sneaker.svg" width="28" height="28" />
       </svg>
       <figcaption>Før</figcaption>
     </figure>
     <span class="shift-arrow">→</span>
     <figure>
-      <svg viewBox="0 0 28 28" role="img" aria-label="Det samme sjutallet forskjøvet to piksler mot høyre">
+      <svg viewBox="0 0 28 28" role="img" aria-label="Den samme joggeskoen forskjøvet to piksler mot høyre">
         <rect width="28" height="28" fill="#000" />
-        <image href="/mnist-seven.svg" x="2" width="28" height="28" />
+        <image href="/fashion-sneaker.svg" x="2" width="28" height="28" />
       </svg>
       <figcaption>Forskjøvet</figcaption>
     </figure>
