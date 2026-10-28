@@ -55,8 +55,10 @@ Løsningsnotatboken viser ett mulig prosjekt med MNIST, som lastes ned til `data
 
 ## Forelesningsmateriell
 
-[Slidev-presentasjonen](slides/slides.md) dekker notatbok 01–03 med
-forelesernotater, demonstrasjoner og oppgavepauser mellom de tre bolkene.
+[Slidev-presentasjonen](slides/slides.md) dekker notatbok 01–05 med
+forelesernotater, demonstrasjoner og oppgavepauser mellom fem korte bolker.
+51 lysbilder med talemanus, omtrent 90–105 minutter forelesning totalt,
+samt overgang til bonusprosjektet i 06.
 Se [kjøring og foreleserveiledning](slides/README.md).
 
 ```bash

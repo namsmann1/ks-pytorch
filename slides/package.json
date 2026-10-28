@@ -1,0 +1,16 @@
+{
+  "name": "pytorch-101-forelesning",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --port 3030",
+    "build": "slidev build",
+    "export": "slidev export --output pytorch-101.pdf"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "^0.25.0",
+    "playwright-chromium": "^1.56.0"
+  },
+  "engines": { "node": ">=22.12.0" }
+}
