@@ -9,3 +9,4 @@ dist/
 data/
 outputs/
 .DS_Store
+.ruff_cache
