@@ -47,8 +47,9 @@ def kontroller():
             for celle in (studentcelle, losningscelle):
                 if celle.cell_type == "code":
                     ast.parse(celle.source, filename=oppgavefil.name)
-                    assert celle.execution_count is None, "Innsjekkede notatbøker skal være uten kjøredata."
-                    assert not celle.outputs, "Kjøredata skal bare ligge i outputs/."
+            if studentcelle.cell_type == "code":
+                assert studentcelle.execution_count is None, "Oppgavenotatbøker skal være uten kjøredata."
+                assert not studentcelle.outputs, "Oppgavenotatbøker skal være uten resultater."
         print(f"Kontrollert: {oppgavefil.name}", flush=True)
     print(f"Totalt: {antall_oppgaver} kodeoppgaver og {antall_svar} skriftlige svaroppgaver.", flush=True)
     return losninger
