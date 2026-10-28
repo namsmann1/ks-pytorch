@@ -1,12 +1,12 @@
-# Fra tall til prediksjoner
+# Forelesning: PyTorch 101
 
-En introduksjon på norsk til de tre første notatbøkene i kurset.
-Forelesningen bygger begrepene fra konkrete tall og visuelle eksempler.
-Notatbøkene inneholder selvstendige eksempler, oppgaver og praktisk PyTorch-bruk.
+En norsk Slidev-presentasjon som følger notatbok 01–05, med overgang til det
+valgfrie prosjektet i 06. 51 lysbilder, med omtrent 90–105 minutter forelesning fordelt på fem
+bolker, avhengig av spørsmål og tempo. Oppgavearbeidet kommer mellom bolkene.
 
-## Kjør presentasjonen
+## Kjøring
 
-Du trenger Node.js 22.12 eller nyere. Fra reporoten:
+Installer Node.js 22.12 eller nyere. Fra prosjektroten:
 
 ```bash
 cd slides
@@ -14,62 +14,65 @@ npm ci
 npm run dev
 ```
 
-Åpne http://localhost:3030. Bruk piltastene til å navigere.
-Trykk `P` for presentatørvisning med notater eller åpne
-http://localhost:3030/presenter. `O` åpner oversikten.
-I Codespaces åpner du den videresendte porten 3030.
-
-## Forelesningsopplegg
-
-| Bolk | Lysbilder | Tema | Arbeid etterpå |
-|---|---|---|---|
-| Tensorer | 2–18 | Skalar, vektor, matrise, former, akser og matrisemultiplikasjon | `01_tensorer.ipynb` |
-| Bilder | 19–26 | Piksler, kanaler, utflating, klassefordeling og nye data | `02_bilder.ipynb` |
-| Prediksjoner | 27–33 | Vektet sum, bias, skårer og delte vekter | `03_prediksjoner.ipynb` |
-
-Lysbilde 1 åpner kurset, 34 peker frem mot trening og 35 gir referanser.
-Sett av omtrent 25–30 minutter til første bolk og 10–15 minutter til hver
-av de to neste, pluss selvstendig arbeid.
-
-Åpningen forutsetter ikke at studentene kjenner tensorer eller matriser.
-Lysbilde 12–15 går gjennom ett matriseprodukt: først matrisene, så første
-resultattall, resten av produktet og til slutt regelen for dimensjonene.
-På lysbilde 13 vises svaret ved neste klikk. Eksemplet har andre tall enn
-notatbøkene. Den vektede summen i bolk 3 bruker igjen samme beregning,
-slik at modellbegrepene bygger på noe kjent.
-
-HTML-kommentarene i `slides.md` er forelesernotater med forklaringer,
-spørsmål og begrepsavklaringer. De vises i presentatørvisningen.
-Lysbilde 23 viser samme joggesko forskjøvet i bildet.
-
-## Bygg og eksporter
+Åpne http://localhost:3030. Bruk piltastene for å navigere og `p` for
+foreleservisning med notater. På lysbildet «Én parameteroppdatering» fremheves
+kodelinjene trinnvis. Alle andre lysbilder vises samlet.
 
 ```bash
-npm run build
-npm run export
+npm run build    # Nettversjon i dist/
+npm run export   # PDF i pytorch-101.pdf
 ```
 
-Bygget ligger i `dist/`; PDF-en heter `pytorch-101.pdf`. Ved manglende
-Chromium kan du kjøre `npx playwright install chromium`. Med lokal Chrome:
+PDF-eksport bruker Chromium fra `playwright-chromium`. Hvis nettleseren ikke ble
+installert sammen med avhengighetene, kjør `npx playwright install chromium`.
+En eksportert PDF har ikke forelesernotater eller interaktive fremhevinger.
+Det ferdigbygde nettstedet bruker lokale fonter og bilder og trenger ingen CDN.
 
-```bash
-npm run export -- --executable-path /usr/bin/google-chrome
-```
+## Foreleserveiledning
 
-PDF-en viser det ferdige innholdet på hvert lysbilde. Presentasjonen bruker
-lokale systemfonter og illustrasjoner.
+| Bolk | Tid | Arbeid etterpå |
+|---|---:|---|
+| Tensorer og matriser | 25–30 min | 01, ca. 45–60 min |
+| Bilder og datasett | 10 min | 02, ca. 30–45 min |
+| Prediksjoner og lag | 20 min | 03, ca. 40–55 min |
+| Trening og evaluering | 25–30 min | 04, ca. 60–90 min |
+| Nettverk og feilanalyse | 15 min | 05, ca. 90–120 min |
 
-## Rediger materialet
+Tidene er veiledende, uten pauser. Bruk resterende tid på hjelp, diskusjon og
+bonusprosjekt. Et mulig skille er 01–04 på dag 1 og 05 på dag 2. Hvis gruppen
+trenger mer tid, flytt 04 til starten av dag 2 og kort ned bonusarbeidet.
+Start dag 2 med å la studentene forklare de fem stegene i treningsløkken.
 
-- `slides.md`: innhold, regneeksempler, forelesernotater og fagkilder.
-- `styles/style.css`: farger, typografi og oppsett.
-- `components/`: tallmatriser og romlig forskyvning.
-- `public/fashion-sneaker.svg`: pikselillustrasjonen.
+De grønne oppgaveslidene er stoppunkter. La studentene jobbe før neste bolk.
+HTML-kommentarene i `slides.md` er et norsk talemanus som kan brukes direkte
+i foreleservisningen. Praktiske tidsanslag og gjennomføringsråd står her i
+veiledningen. Lysbildene introduserer begrepene før kodeeksemplene; de er ikke
+en gjennomgang av hver oppgavecelle eller en sammenhengende Python-fil.
+Notatbøkene er stedet for kjøring og demonstrasjoner.
 
-Generer pikselillustrasjonen på nytt fra reporoten etter Python-oppsettet:
+Hold hovedinnstillingene lik notatbøkene: 20 000 treningsbilder, 1 000 testbilder,
+batchstørrelse 64, Adam med læringsrate 0.001 og 25 epoker. Nettverket har 128
+skjulte nevroner. Sammenligningen med 8 nevroner og prosjektet i 06 er valgfrie.
+Backpropagation forklares bare som beregning av gradienter, uten utledning.
 
-```bash
-uv run python slides/generate_assets.py
-```
+## Filer og kilder
 
-Skriptet bruker prosjektets datahjelper, som laster ned Fashion-MNIST ved behov.
+- `slides.md`: innhold og forelesernotater.
+- `styles/index.css`: farger, typografi og oppsett.
+- `components/LearningCurves.vue`: skjematiske trenings- og valideringskurver.
+- `components/PixelGrid.vue`: tallene i en 4 × 4-pikselmatrise.
+- `public/fashion-mnist.png`: faktiske treningsbilder fra kursets faste utvalg.
+- `scripts/make_dataset_figure.py`: gjenskaper figuren med prosjektets Python-miljø.
+
+Bildene kommer fra [Zalando Research, Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist),
+under [MIT-lisensen](https://github.com/zalandoresearch/fashion-mnist/blob/master/LICENSE).
+Figuren inneholder ett bilde per klasse; den viser ikke modellprediksjoner.
+Forvekslingsmatrisen på lysbildet er et tydelig merket, konstruert eksempel.
+
+Rekkefølgen følger kursnotatbøkene. Begrepsinndelingen er også inspirert av
+[CS231n PyTorch Tutorial, Guanzhi Wang (2021)](https://cs231n.stanford.edu/2021/slides/2021/discussion_4_pytorch.pdf).
+Tekst, manus og illustrasjoner er laget for dette kurset. Supplerende dokumentasjon:
+
+- [PyTorch: tensorer](https://docs.pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html)
+- [PyTorch: trening og evaluering](https://docs.pytorch.org/tutorials/beginner/basics/optimization_tutorial.html)
+- [Slidev: bruk og bygging](https://sli.dev/guide/)
