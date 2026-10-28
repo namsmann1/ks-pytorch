@@ -92,7 +92,7 @@ ikke en egen radakse. Vi skiller mellom formen [4] og en matrise med formen [1,4
 
 <div class="columns" style="margin-top: 45px">
 <div>
-<TensorMatrix :rows="[[7,2,9],[4,8,1]]" :selected="['0,0','0,1','0,2']" label="Den første raden er markert." />
+<TensorMatrix :rows="[[7,2,9],[4,8,1]]" :selected="['0,0','0,1','0,2']"/>
 </div>
 <div>
 
